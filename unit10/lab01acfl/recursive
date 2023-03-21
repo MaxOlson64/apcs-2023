@@ -1,0 +1,11 @@
+public class recursive{
+    public static void main(String[] args) {
+        System.out.println(fun3(5));
+    }
+    public static int fun3 (int n){
+        if(n==0)
+            return 1;
+        else
+            return 3*fun3(n-1);        
+    }
+}
