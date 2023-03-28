@@ -7,9 +7,9 @@ public class piDay{
             return 0;
         }else{
             if(subtract==true){
-                -return 4.0/n + piDay(n + 2, subtract);
+                return -4.0/n + piDay(n + 2, false);
             }else{
-                return 4.0/n + piDay(n + 2, subtract);
+                return 4.0/n + piDay(n + 2, true);
             }
            
         }
