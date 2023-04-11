@@ -8,7 +8,13 @@ public class APCalendar {
 
 	/** Returns true if year is a leap year and false otherwise. */
 	private static boolean isLeapYear(int year) { /* implementation not shown */
-		return LocalDate.of(year, 1, 1).isLeapYear();
+		//return LocalDate.of(year, 1, 1).isLeapYear();
+		if (year%4==0){
+			return true;
+		}else{
+			return false;
+		}
+
 	}
 
 	/**
@@ -17,7 +23,14 @@ public class APCalendar {
 	 */
 	public static int numberOfLeapYears(int year1, int year2) {
 		/* to be implemented in part (a) */
-		return -1; // replace me!
+		//return -1; // replace me!
+		int count = 0;
+		int year = year1;
+		for(year1 <= year2){
+			if(isLeapYear(year)==true){
+				count++;
+			}
+		}
 	}
 
 	/**
@@ -54,6 +67,8 @@ public class APCalendar {
 	}
 
 	public static void main(String[] args) {
+		// System.out.println(isLeapYear(2024));
+		// System.out.println(numbersOfLeapYear(1900,2000));
 		check(APCalendar.isLeapYear(2023) == false);
 		check(APCalendar.isLeapYear(2024) == true);
 		check(APCalendar.isLeapYear(2500) == false);
@@ -79,6 +94,8 @@ public class APCalendar {
 		check(APCalendar.dayOfWeek(5, 3, 2023) == 3); // AP EXAM!
 
 		System.out.println("Happy Panda! \uD83D\uDC3C");
+		
+		
 	}
 
 }
