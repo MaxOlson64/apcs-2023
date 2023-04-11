@@ -24,12 +24,15 @@ public class APCalendar {
 	public static int numberOfLeapYears(int year1, int year2) {
 		/* to be implemented in part (a) */
 		//return -1; // replace me!
+
+
 		int count = 0;
-		int year = year1;
-		for(year1 <= year2){
+		// int year = year1;
+		for(int y=year1;y <= year2; y++){
 			if(isLeapYear(year)==true){
 				count++;
 			}
+			return count;
 		}
 	}
 
@@ -67,8 +70,10 @@ public class APCalendar {
 	}
 
 	public static void main(String[] args) {
-		// System.out.println(isLeapYear(2024));
-		// System.out.println(numbersOfLeapYear(1900,2000));
+		 System.out.println(isLeapYear(2023));
+		 System.out.println(isLeapYear(2024));
+		 System.out.println(isLeapYear(2500));
+		 System.out.println(numberOfLeapYears(1976,2023));
 		check(APCalendar.isLeapYear(2023) == false);
 		check(APCalendar.isLeapYear(2024) == true);
 		check(APCalendar.isLeapYear(2500) == false);

@@ -55,7 +55,16 @@ public class FrogSimulation {
      */
     public boolean simulate() {
         /* to be implemented in part (a) */
-        return false; // replace me!
+        int position = 0;
+        for(int count = 0;count < maxHops; count++){
+            position +=hopDistance();
+            if(position >= goalDistance){
+                return true;
+            }else if(position < 0){
+                return false;
+            }
+        }
+        return false;
     }
 
     /**
@@ -66,7 +75,13 @@ public class FrogSimulation {
      */
     public double runSimulations(int num) {
         /* to be implemented in part (b) */
-        return -1; // replace me!
+        int countSuccess = 0;
+        for(int count = 0; count < num; count++){
+            if(simulate()){
+                countSuccess++;
+            }
+        }
+        return (double)countSuccess/num;
     }
 
     public static void check(boolean test) throws AssertionError {
