@@ -8,12 +8,8 @@ public class APCalendar {
 
 	/** Returns true if year is a leap year and false otherwise. */
 	private static boolean isLeapYear(int year) { /* implementation not shown */
-		//return LocalDate.of(year, 1, 1).isLeapYear();
-		if (year%4==0){
-			return true;
-		}else{
-			return false;
-		}
+		return LocalDate.of(year, 1, 1).isLeapYear();
+		
 
 	}
 
@@ -22,18 +18,13 @@ public class APCalendar {
 	 * Precondition: 0 <= year1 <= year2
 	 */
 	public static int numberOfLeapYears(int year1, int year2) {
-		/* to be implemented in part (a) */
-		//return -1; // replace me!
-
-
 		int count = 0;
-		// int year = year1;
 		for(int y=year1;y <= year2; y++){
-			if(isLeapYear(year)==true){
+			if(isLeapYear(y)){
 				count++;
 			}
-			return count;
 		}
+		return count;
 	}
 
 	/**
@@ -60,8 +51,9 @@ public class APCalendar {
 	 * Precondition: The date represented by month, day, year is a valid date.
 	 */
 	public static int dayOfWeek(int month, int day, int year) {
-		/* to be implemented in part (b) */
-		return -1; // replace me!
+		int firstDay = firstDayOfYear(year);
+		int doy = dayOfYear(month,day,year);
+		return(firstDay + doy -1)% 7;
 	}
 
 	public static void check(boolean test) throws AssertionError {
@@ -70,10 +62,7 @@ public class APCalendar {
 	}
 
 	public static void main(String[] args) {
-		 System.out.println(isLeapYear(2023));
-		 System.out.println(isLeapYear(2024));
-		 System.out.println(isLeapYear(2500));
-		 System.out.println(numberOfLeapYears(1976,2023));
+		
 		check(APCalendar.isLeapYear(2023) == false);
 		check(APCalendar.isLeapYear(2024) == true);
 		check(APCalendar.isLeapYear(2500) == false);
