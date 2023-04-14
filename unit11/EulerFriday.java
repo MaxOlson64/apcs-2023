@@ -1,5 +1,5 @@
 package unit11;
-
+import unit10.Recur;
 public class EulerFriday {
 
     public static void main(String[] args) {
@@ -7,12 +7,39 @@ public class EulerFriday {
         // 1
         int sum = 0;
         for (int i = 0; i < 1000; i++) {
-
+            if(i%3==0||i%5==0){
+                sum += i;
+            }
         }
         System.out.println(sum);
 
         // 2
+        long factorMe = 600851475143l;
+        int factor = 2;
+        while(factorMe > factor){
+            if(factorMe%factor == 0){
+                factorMe/=factor;
+            }else{
+                factor++;
+            }
+        }
+        System.out.println(factor);
 
+
+        //q4
+        int largestPal = 0;
+        for(int i=100;i<=999;i++){
+            for(int o = 100; 0 <= 999; 0++){
+                int product = i*o;
+                String productString = Integer.toString(product);
+                if(Recur.pot(productString)){
+                    if(product > largestPal){
+                        largestPal = product;
+                    }
+                }
+            }
+        }
+        System.out.println(largestPal);
     }
 
     static int[] prob8scaffold() {
@@ -49,4 +76,15 @@ public class EulerFriday {
         return nums;
     }
 
+    public int GCD(int a, int b){
+        if(a%b==0){
+            return b;
+        }else{
+            return GCD(b,a%b);
+        }
+    }
+
+    public int LCM (int a, int b){
+        return (a*b)/GCD(a,b);
+    }
 }
