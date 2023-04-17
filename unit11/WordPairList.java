@@ -39,6 +39,12 @@ public class WordPairList {
      * Precondition: words.length >= 2
      */
     public WordPairList(String[] words) {
+        new ArrayList() arrTemp = null;
+        for(int i = 0; i<= words.length; i++){
+            arrTemp.set(i,first + ", "+ second);
+            first = second;
+            second = words.get(i);
+        }
         /* to be implemented in part (a) */
     }
 
