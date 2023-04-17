@@ -29,7 +29,7 @@ public class EulerFriday {
         //q4
         int largestPal = 0;
         for(int i=100;i<=999;i++){
-            for(int o = 100; 0 <= 999; 0++){
+            for(int o = 100; o <= 999; o++){
                 int product = i*o;
                 String productString = Integer.toString(product);
                 if(Recur.pot(productString)){
