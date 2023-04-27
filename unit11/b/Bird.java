@@ -43,6 +43,14 @@ public class Bird {
     private int smallest(int[] arr, int n) {
         // return smallest value in arr less than n
         // what is the smallest integer?
-        return n; // replace me
+        int smallest = Integer.MAX_VALUE;
+        for(int i = 0; i< arr.length; i++){
+            if(arr[i]<n){
+                if(arr[i] < smallest){
+                    smallest = arr[i];
+                }
+            }
+        }
+        return smallest;
     }
 }
